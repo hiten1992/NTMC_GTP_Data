@@ -1,0 +1,27 @@
+sudo apt-get update -y -qqq --fix-missing && sudo apt-get install -y -qqq autoconf libtool > /dev/null
+sudo apt install autoconf
+sudo apt install libmnl-dev
+sudo apt install libtalloc-dev libpcsclite-dev
+sudo apt-get install -y libosmocore
+
+sudo apt-get install libusb-1.0-0-dev
+sudo apt-get install gnutls-dev
+sudo apt install libsctp-dev
+
+
+
+To obtain libosmocore, you can use the following git URL:
+
+git clone git://git.osmocom.org/libosmocore.git
+
+Compiling and installing it
+
+To compile and install it as standalone:
+
+cd libosmocore/
+autoreconf -i
+./configure
+make
+sudo make install
+sudo ldconfig -i
+cd ..
